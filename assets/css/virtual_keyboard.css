@@ -1,0 +1,145 @@
+
+.virtual-keyboard {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    width: 517px;
+    padding: 10px;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    z-index: 1000;
+}
+
+.virtual-keyboard.hide {
+    display: none;
+}
+
+.type-lang {
+    width: 100%;
+    height: 24px;
+    cursor: move;
+    padding: 0px 3px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-close-vk {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(../img/btn-images.png);
+    background-position: 14px -95px;
+    width: 38px;
+    height: 38px;
+    padding: 13px 14px 8px 4px;
+    opacity: .4;
+    transition: all linear .1s;
+    overflow: hidden;
+}
+
+.btn-close-vk:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+tr {
+    display: flex;
+}
+
+.vk-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 29px;
+    height: 29px;
+    margin: 2px;
+    padding: 1px;
+    color: #444;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 25px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    transition: all linear 0.1s;
+    user-select:  none;
+}
+
+.vk-btn:hover {
+    border-color: #c6c6c6;
+    color: #111;
+    background-color: #f8f8f8;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.vk-btn.clicked {
+    border-color: #c6c6c6;
+    color: #111;
+    background-color: #d6d6d6;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.vk-btn.uppercase {
+    text-transform: uppercase;
+}
+
+.btn-delete {
+    width: 62px;
+}
+
+.btn-delete-img {
+    background-position: 0 -132px;
+}
+
+.btn-backslash {
+    width: 47.5px;
+}
+
+.btn-capslock {
+    width: 58.75px;
+}
+
+.btn-capslock-img {
+    background-position: 2px -210px;
+}
+
+.btn-shift {
+    width: 78.5px;
+}
+
+.btn-shift-img {
+    background-position: 2px  -184px;
+}
+
+.btn-delete:hover .btn-special,
+.btn-capslock:hover .btn-special,
+.btn-shift:hover .btn-special {
+    opacity: 1;
+}
+
+.btn-ctrl-alt {
+    width: 95px;
+    text-transform: none !important;
+}
+
+.btn-white-space {
+    width: 293px;
+}
+
+.btn-empty {
+    flex: 1;
+}
+
+.btn-special {
+    display: block;
+    background-image: url(../img/btn-images.png);
+    width: 22px;
+    height: 17px;
+    opacity: .667;
+    transition: all linear .1s;
+}

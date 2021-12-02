@@ -1,0 +1,15 @@
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px)  {
+    .header__search {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .header__search-container {
+        margin-left: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 740px) {
+}
