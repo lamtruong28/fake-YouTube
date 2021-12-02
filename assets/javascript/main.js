@@ -309,12 +309,14 @@ itemContents.forEach( (item,index) => {
 });
 
 // JS btn show more content:
-const btnShowMore = $('.show-more');
+const btnShowMores = $$('.show-more');
 const contentMiddle = $('.content-middle');
-btnShowMore.onclick = () => {
-    btnShowMore.classList.add('clicked');
-    contentMiddle.style.height = '604px';
-};
+btnShowMores.forEach( btn => {
+    btn.onclick = () => {
+        btn.classList.add('clicked');
+        contentMiddle.style.height = 'auto';
+    };
+})
 
 // JS virtual keyboard:
 const btnOpenVK = $('.header__search-key');

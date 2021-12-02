@@ -244,7 +244,7 @@
 }
 
 .content-middle {
-    height: 355px;
+    height: 365px;
     overflow: hidden;
     transition: height linear 0.3s;
 }
@@ -252,6 +252,10 @@
 .show-more {
     display: flex;
     justify-content: center;
+}
+
+.show-more-tablet {
+    display: none;
 }
 
 .show-more.clicked {

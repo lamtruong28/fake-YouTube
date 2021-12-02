@@ -731,6 +731,7 @@
 
 .category__left-list {
     margin-top: 4px;
+    list-style: none;
 }
 
 .category__left-item-link {
