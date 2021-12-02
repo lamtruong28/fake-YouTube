@@ -7,7 +7,6 @@
     
     .header__right {
         width: auto;
-        flex: 1;
     }   
     
 
@@ -27,6 +26,7 @@
     .header__search {
         width: auto;
         margin-left: 0;
+        margin-right: 0;
     }
 
     .header__bottom-btn-move-next {
@@ -44,6 +44,14 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .header__right {
+        flex: 1;
+    }
+
     .category__left {
         left: 0;
         right: 0;
