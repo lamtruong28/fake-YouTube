@@ -397,11 +397,11 @@ btnVKs.forEach((key,i) => {
     key.onclick = (e) => {
         if(i == 13 || i == 27 || i == 39 || i == 50 || i == 51 || i == 53)
             return;
-        inputSearch.value += key.textContent;
-        if(inputSearch.value != "")
+        inputSearch.value += key.innerHTML;
+        if(inputSearch.value.length != 0)
             btnClearText.classList.remove('hide');
         else
-        btnClearText.classList.add('hide');
+            btnClearText.classList.add('hide');
     }
 }); 
 
@@ -435,6 +435,8 @@ btnShifts.forEach( key => {
 btnBackspace.onclick = () => {
     var textCurrent = inputSearch.value;
     inputSearch.value = textCurrent.substr(0,inputSearch.value.length -1);
+    if(inputSearch.value.length == 0) 
+        btnClearText.classList.add('hide');
 }
 
 
@@ -471,7 +473,7 @@ btnBackTheme.onclick = (e) => {
 }
 
 // Xử lý chuyển theme:
-const currentTheme = localStorage.getItem('theme');
+// const currentTheme = localStorage.getItem('theme');
 displays.forEach(e => {
     e.onclick = () => {
         $('.display-content-item.active').classList.remove('active');
@@ -489,9 +491,8 @@ displays.forEach(e => {
                 textBtnTheme.innerHTML = 'Sáng';
             else
                 textBtnTheme.innerHTML = 'Giao diện thiết bị';
-        }
-
-    }
+        };
+    };
 });
 
 // Js xóa lịch sử tìm kiếm:
@@ -502,12 +503,45 @@ btnDeletes.forEach( (btn,i) => {
     btn.onclick = () => {
         btn.classList.add('clicked');
         handleClickBtbDel(i);
-    }
-})
+    };
+});
 
 function handleClickBtbDel (i) {
     contentHistorys[i].textContent = 'Đã xóa đề xuất';
     contentHistorys[i].style.color = "#666";
     contentHistorys[i].style.fontWeight = '400';
     contentHistorys[i].style.cursor = 'default';
+}
+
+// JS notify mobile:
+
+const btnNotifyMobile = $('.notify-mobile');
+const notifyIconWhite = $('.notification-icon-white')
+const notifyIconBlack = $('.notification-icon-black')
+
+const btnSearchMobile = $('.header__search-btn-mobile');
+const boxSearch = $('.header__search');
+const btnBackSearch = $('.btn-back-search');
+const btnCloseOptionUser = $('.header__user-option-btn-close');
+
+btnNotifyMobile.onclick = (e) => {
+    itemNotify.classList.toggle('active');
+    notifyIconWhite.classList.toggle('hide');
+    notifyIconBlack.classList.toggle('hide');
+    e.stopPropagation();
+}
+
+btnSearchMobile.onclick = (e) => {
+    boxSearch.classList.add('active');
+    inputSearch.focus();
+    historySearch.classList.add('active');
+    e.stopPropagation();
+}
+
+btnBackSearch.onclick = () => {
+    boxSearch.classList.remove('active');
+}
+
+btnCloseOptionUser.onclick = () => {
+    itemHeaderUser.classList.remove('active');
 }

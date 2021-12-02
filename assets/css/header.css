@@ -167,6 +167,7 @@
     position: relative;
 }
 
+.header__search-btn-mobile,
 .header__right-item {
     height: 40px;
     padding: 8px;
@@ -472,6 +473,17 @@
     text-decoration: none;
     color: #065fd4;
     margin-bottom: 2px;
+}
+
+.header__user-option-btn-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+}
+
+.header__user-option-btn-close:hover {
+    background-color: var(--bg-btn-category-header);
 }
 
 .header__user-option-container {
