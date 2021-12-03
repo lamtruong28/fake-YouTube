@@ -26,6 +26,7 @@
     background-color: transparent;
     opacity: 1;
     padding: 4px;
+    margin: -4px;
     border-radius: 4px;
 }
 
@@ -54,7 +55,6 @@
 
 .content-item-link {
     display: block;
-    height: 212px;
     text-decoration: none;
 }
 
@@ -105,7 +105,7 @@
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-bottom: 4px;
     padding-right: 24px;
     display: -webkit-box;
