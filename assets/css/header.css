@@ -595,12 +595,13 @@
 }
 
 .header__bottom-list {
+    position: relative;
     height: 100%;
     width: 1192px;
     flex-wrap: nowrap;
     list-style: none;
     padding-left: 24px;
-    transition: transform linear 0.3s;
+    transition: all linear 0.2s;
     transition-delay: 0.1s;
 }
 
