@@ -33,7 +33,6 @@
     .header__bottom-btn-move-next {
         right: 0;
     }
-
     .show-more-pc {
         display: none;
     }
@@ -148,6 +147,10 @@
 
     .header__user-option-header {
         border-right: none;
+    }
+
+    .content-middle {
+        height: 1320px;
     }
 
     .footer {

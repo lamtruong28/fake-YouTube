@@ -2,6 +2,8 @@ window.addEventListener('load', ()=> {
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
     
+    const loading = $('.loading');
+    const btnSearch = $('.header__search-btn');
     const btnMic = $('.header__search-mic');
     const btnCreate = $('.header__create');
     const itemCreate = $('.header__create-menu');
@@ -32,6 +34,15 @@ window.addEventListener('load', ()=> {
     
     const categoryItems = $$('.header__bottom-item-link');
     
+
+    btnSearch.onclick = () => {
+        if(inputSearch.value.trim().length != 0) {
+            loading.classList.add('active');
+            setTimeout(() => {
+                loading.classList.remove('active');
+            },1000);
+        };
+    };
     
     btnMic.addEventListener('mousedown', () => {
         btnMic.classList.toggle('clicked');

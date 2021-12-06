@@ -1,5 +1,26 @@
+.loading {
+    position: fixed;
+    z-index:calc(var(--z-index-header) + 1);
+    top: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+}
 
-#header {
+.loading.active {
+    animation: grow ease 1s;
+}
+
+@keyframes grow {
+    70% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
