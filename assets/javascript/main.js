@@ -269,12 +269,17 @@ window.addEventListener('load', ()=> {
     
     itemContents.forEach( (item,index) => {
         item.addEventListener('mouseenter', () => {
-            itemContentImgs[index].src = `./assets/img/item(${index + 1}).webp`;
-    
-            // Nếu trong trường hợp không có ảnh động khi hover thì sẽ dùng ảnh nền luôn (ảnh hiển thị khi load page) như sau:
-            itemContentImgs[index].onerror = ()=> {
-                itemContentImgs[index].src = `./assets/img/item(${index + 1})-bg.webp`;
-            };
+            var changeBg = setTimeout(() => {
+                itemContentImgs[index].src = `./assets/img/item(${index + 1}).webp`;
+        
+                // Nếu trong trường hợp không có ảnh động khi hover thì sẽ dùng ảnh nền luôn (ảnh hiển thị khi load page) như sau:
+                itemContentImgs[index].onerror = ()=> {
+                    itemContentImgs[index].src = `./assets/img/item(${index + 1})-bg.webp`;
+                };
+            },500);
+            item.addEventListener('mouseleave' , () => {
+                clearTimeout(changeBg);
+            })
         });
         item.addEventListener('mouseleave', () => {
             itemContentImgs[index].src = `./assets/img/item(${index + 1})-bg.webp`;
